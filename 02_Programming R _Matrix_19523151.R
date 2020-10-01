@@ -22,7 +22,7 @@ which(N[1,] < 3)
 
 #No 2
 #Sample 100 numbers in the range of [1,1000], without replacement, and assign those to a variable named values.
-values <- c(1:100)
+values <- sample(c(1:1000), 100)
 
 #No 3
 #Create a 10 × 10 matrix G, with elements from values, filling by row.
