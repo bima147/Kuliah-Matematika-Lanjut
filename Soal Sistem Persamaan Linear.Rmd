@@ -1,0 +1,92 @@
+---
+title: "Exercise SPL"
+output: html_notebook
+---
+
+# Soal ke-1
+```{r}
+P <- matrix(c(5,-4,-1,1), 2, 2, TRUE)
+q <- c(-10,2)
+showEqn(P, q)
+```
+```{r}
+Solve(P, q)
+```
+```{r}
+plotEqn(P, q)
+```
+```{r}
+echelon(P, q)
+```
+```{r}
+echelon(P, q, verbose=TRUE)
+```
+```{r}
+echelon(P, q, verbose=TRUE, fraction=TRUE)
+```
+
+# Soal ke-2
+```{r}
+R <- matrix(c(4,-2,0,5,-2,1,3,4,-1), 3, 3, TRUE)
+s <- c(2,7,3)
+showEqn(R,s)
+```
+```{r}
+solve(R,s)
+```
+```{r}
+plotEqn3d(R,s)
+```
+```{r}
+echelon(R, s)
+```
+```{r}
+echelon(R, s, verbose=TRUE)
+```
+```{r}
+echelon(R, s, verbose = TRUE, fraction = TRUE)
+```
+
+# Soal ke-3
+```{r}
+T <- matrix(c(1,1,1,2,3,5,4,0,5), 3, 3, TRUE)
+u <- c(5,8,2)
+showEqn(T,u)
+```
+```{r}
+Solve(T,u)
+```
+```{r}
+plotEqn3d(T, u)
+```
+```{r}
+echelon(T, u)
+```
+```{r}
+echelon(T, u, verbose = TRUE)
+```
+```{r}
+echelon(T, u, verbose = TRUE, fraction = TRUE)
+```
+
+# Soal ke-4
+```{r}
+V <- matrix(c(2,5,1,-1,4,3,5,0,-2), 3, 3, TRUE)
+y <- c(-12,-4,-3)
+showEqn(V, y)
+```
+```{r}
+solve(V, y)
+```
+```{r}
+plotEqn3d(V, y)
+```
+```{r}
+echelon(V, y)
+```
+```{r}
+echelon(V, y, verbose = TRUE)
+```
+```{r}
+echelon(V, y, verbose = TRUE, fraction = TRUE)
+```
