@@ -1,0 +1,128 @@
+---
+title: "ProgR-19523133-19523235-19523151"
+output: html_notebook
+---
+
+# Soal Ke-1
+```{r}
+# Create the following matrix A:
+A <- matrix(c(1:9), 3, 3, TRUE)
+A
+```
+```{r}
+# (a) Define the column and row names to produce the following result for matrix A:
+colnames(A) <- c('col1', 'col2', 'col3')
+```
+```{r}
+rownames(A) <- c('row1', 'row2', 'row3')
+A
+```
+```{r}
+# (b) Find the diagonal matrix of matrix A
+diag(A)
+```
+```{r}
+# (c) Find the determinant of matrix A
+det(A)
+```
+```{r}
+# (d) Find the inverse of matrix A
+solve(A)
+```
+```{r}
+# (e) Calculate matrix Transpose A x A
+t(A)%*%A
+```
+```{r}
+# (f) Compute eigenvalue and eigenvector of matrix A
+eigen(A)
+```
+
+
+# Soal Ke-2
+```{r}
+# Suppose
+B <- matrix(c(1,5,-2,1,2,-1,3,6,-3), 3, 3)
+B
+```
+```{r}
+# (a) Check that B3 = 0 where 0 is a 33 matrix with every entry equal to 0
+B%*%B%*%B
+```
+```{r}
+# (b) Replace the third column of B by the sum of the second and third columns
+bt <- B[,2]+B[,3]
+b <- c(1,5,-2, 1,2,-1, bt)
+matrix(c(b), 3,3)
+```
+
+
+# Soal Ke-3
+```{r}
+M <- matrix(c(1,2,3,8,2,9), 3, 2, TRUE)
+M
+```
+```{r}
+N <- matrix(c(5,4,8,2), 2, 2, TRUE)
+N
+```
+```{r}
+# (a) Find MN
+M%*%N
+```
+```{r}
+# (b) Find MN −1
+M%*%(solve(N))
+```
+```{r}
+# (c) Find M x Transpose N
+M %*% t(N)
+```
+```{r}
+# (d) Find 3 × ((MN −1) + MNT)
+3*((M %*% solve(N)) + (M %*% t(N)))
+```
+
+
+# Soal 4
+```{r}
+C <- matrix(c(1,2,-3,-2,1,2,3,1,-2), 3, 3)
+d <- c(7,4,10)
+
+# (a) Show the equation
+showEqn(C, d)
+```
+```{r}
+# (b) Find the solution
+solve(C, d)
+```
+```{r}
+# (c) Plot the equation
+plotEqn3d(C, d)
+```
+```{r}
+# (d) Find the solution by using reduced echelon form
+echelon(C, d)
+```
+
+
+# Soal 5
+```{r}
+# Using for-loop and if-then, transform the following tasks:
+X <- matrix(c(1:9), 3, 3, TRUE)
+X
+```
+```{r}
+# into this matrix:
+Y <- matrix(c(0,1,1,0,5,8,0,6,9), 3,3)
+Y
+```
+```{r}
+for(p in 1:3){
+  for(q in 1:3) {
+    X[p, q] <- Y[p, q]
+  }
+}
+X
+```
+
