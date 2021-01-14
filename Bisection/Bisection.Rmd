@@ -1,0 +1,41 @@
+---
+title: "Bisection"
+author: "Bima Prakoso"
+date: "1/14/2021"
+output: html_document
+---
+
+```{r}
+f <- function(x) {
+  return (x^3 + 4*x^2 - 10)
+}
+a <- 1
+f(a)
+```
+```{r}
+b <- 2
+f(b)
+```
+```{r}
+bisection <- function(f, a, b) {
+  i <- 1
+  p <- (a+b)/2
+  error <- 1
+  while(f(p) != 0 && error > 0.0001){
+    if(f(a)*f(p) > 0) {
+      a <- p
+    } else {
+      b <- p
+    }
+    p1 <- (a+b)/2
+    error <- abs(p1-p)/abs(p1)
+    p <- p1
+    i <- i + 1
+  }
+  print('iterasi ke-')
+  print(i)
+  return(p)
+}
+
+bisection(f, a, b)
+```
