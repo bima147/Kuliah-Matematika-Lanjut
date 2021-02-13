@@ -1,0 +1,38 @@
+---
+title: "Newton Rapson"
+author: "Bima Prakoso"
+date: "1/14/2021"
+output: html_document
+---
+
+```{r}
+library(numDeriv)
+
+f <- function(x) {
+  return(x^3 + 4*x^2 -10)
+}
+
+p0 <- 1
+f(p0)
+```
+```{r}
+newton <- function(f, p0) {
+  i <- 1
+  error <- 1
+  while(f(p0) != 0 && error > 0.0001) {
+    dx <- genD(func = f, x = p0)$D[1]
+    p1 <- p0 - f(p0)/dx
+    error <- abs((p1-p0)/p1)
+    p0 <- p1
+    i <- i + 1
+  }
+  print('iterasi ke-')
+  print(i)
+  print(p0)
+  print('errornya : ')
+  return(error)
+}
+
+newton(f, p0)
+```
+
